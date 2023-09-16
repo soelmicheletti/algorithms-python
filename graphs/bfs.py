@@ -11,10 +11,10 @@ def bfs(adjacency_list, start):
     Q = [start]
 
     while len(Q) > 0:
-        u = Q.pop()
-        visited[u] = True
-
-        for v in adjacency_list[u]:
-            if v not in Q and not visited[v]:
-                Q.append(v)
+        u = Q.pop(0)
+        if not visited[u]:
+            visited[u] = True
+            for v in adjacency_list[u]:
+                if v not in Q and not visited[v]:
+                    Q.append(v)
     return visited

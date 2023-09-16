@@ -12,7 +12,7 @@ def bfs_shortest_path(adjacency_list, start):
     Q = [start]
 
     while len(Q) > 0:
-        u = Q.pop()
+        u = Q.pop(0)
 
         for v in adjacency_list[u]:
             if distance[v] == -1 or distance[u] + 1 < distance[v]:
