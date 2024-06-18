@@ -38,6 +38,7 @@ Algorithm  | Key Idea | Runtime
 [Bubble Sort](/sorting/bubble_sort.py)  | Double for loop. | **O(n^2)** (worst-case)
 [Insertion Sort](/sorting/insertion_sort.py)  | Sorting a deck of card. | **O(n^2)** (worst-case)
 [Selection Sort](/sorting/selection_sort.py)  | Pick the maximum of the unsorted part of the array and put it at the end. | **O(n^2)** (worst-case)
+[Heap Sort](/sorting/heap_sort.py)  | Selection sort with efficient data structure | **O(n log n)** (worst-case)
 [Merge Sort](/sorting/merge_sort.py)  | Divide and conquer. | **O(n log n)** (worst-case)
 [Quick Sort](/sorting/quick_sort.py)  | Use a (random) pivot to partition the array. | **O(n log n)** average-case, but **O(n^2)** worst-case
 
@@ -46,7 +47,7 @@ Algorithm  | Key Idea | Runtime
 Data Structure  | Supported Operations 
 ------------- | -------------
 [Binary Search Tree](/data-structures/BinarySearchTree.java)  | Add, find, dele: everything **O(h)** (h is the height of the tree)
-[Priority Queue](/data-structures/PriorityQueue.java)  | Enque, Deque: both **O(log n)**
+[Max heap](/data_structures/max_heap.py)  | Enque, Deque: both **O(log n)**
 [Queue](/data-structures/Queue.java)  | Enque, Deque: both **O(1)** 
 [Stack](/data-structures/Stack.java)  | Push, Pop, Top: everything **O(1)** 
 [Union Find](/data-structures/UnionFind.java)  | Find, Union: both **O(log n)** using path compression 
