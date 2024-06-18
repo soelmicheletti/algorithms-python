@@ -35,11 +35,11 @@ Algorithm  | Key Idea | Runtime
 
 Algorithm  | Key Idea | Runtime
 ------------- | ------------- | -------------
-[Bubble Sort](/sorting/BubbleSort.java)  | Double for loop. | **O(n^2)** (worst-case)
-[Insertion Sort](/sorting/InsertionSort.java)  | Sorting a deck of card. | **O(n^2)** (worst-case)
-[Selection Sort](/sorting/SelectionSort.java)  | Pick the maximum of the unsorted part of the array and put it at the end. | **O(n^2)** (worst-case)
-[Merge Sort](/sorting/MergeSort.java)  | Divide and conquer. | **O(n log n)** (worst-case)
-[Quick Sort](/sorting/QuickSort.java)  | Use a (random) pivot to partition the array. | **O(n log n)** average-case, but **O(n^2)** worst-case
+[Bubble Sort](/sorting/bubble_sort.py)  | Double for loop. | **O(n^2)** (worst-case)
+[Insertion Sort](/sorting/insertion_sort.py)  | Sorting a deck of card. | **O(n^2)** (worst-case)
+[Selection Sort](/sorting/selection_sort.py)  | Pick the maximum of the unsorted part of the array and put it at the end. | **O(n^2)** (worst-case)
+[Merge Sort](/sorting/merge_sort.py)  | Divide and conquer. | **O(n log n)** (worst-case)
+[Quick Sort](/sorting/quick_sort.py)  | Use a (random) pivot to partition the array. | **O(n log n)** average-case, but **O(n^2)** worst-case
 
 ## Data Structures
 

@@ -1,6 +1,13 @@
 import graphs.bfs
 import graphs.bfs_shortest_path
 import graphs.dfs
+import random
+from typing import List
+import sorting.bubble_sort
+import sorting.insertion_sort
+import sorting.merge_sort
+import sorting.quick_sort
+import sorting.selection_sort
 
 def test_graphs():
     # Undirected graphs with thre connected components
@@ -21,5 +28,34 @@ def test_graphs():
     assert graphs.dfs.dfs(undirected_graph, 6) == [False, False, True, False, False, True, True, True]
     print("DFS tests passed succesfully!")
 
+def test_sorting():
+    random.seed(42) # for reproducibility
+
+    def is_sorted(nums: List[int]) -> bool:
+        for i in range(len(nums) - 1):
+            if nums[i] > nums[i + 1]:
+                return False
+        return True
+    
+    unsorted_list = [] # long list to sort
+    for _ in range(1000):
+        unsorted_list.append(random.randint(1, 10000))
+        
+    assert is_sorted(sorting.bubble_sort.bubble_sort(unsorted_list))
+    print("Bubble sort succeeded")
+    assert is_sorted(sorting.insertion_sort.insertion_sort(unsorted_list))
+    print("Insertion sort succeeded")
+    assert is_sorted(sorting.selection_sort.selection_sort(unsorted_list))
+    print("Selection sort succeeded")
+    assert is_sorted(sorting.merge_sort.merge_sort(unsorted_list))
+    print("Merge sort succeeded")
+
+    unsorted_list = [] # long list to sort
+    for _ in range(1000):
+        unsorted_list.append(random.randint(1, 1000000))
+    assert is_sorted(sorting.quick_sort.quick_sort(unsorted_list))
+    print("Quick sort succeeded")
+
 if __name__ == "__main__":
     test_graphs()
+    test_sorting()
