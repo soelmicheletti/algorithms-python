@@ -26,10 +26,10 @@ Algorithm  | Goal | Runtime
 
 Algorithm  | Key Idea | Runtime
 ------------- | ------------- | -------------
-[Linear Search](/searching/LinearSearch.java)  | Check every element. | **O(n)** (worst-case)
-[Binary Search](/searching/BinarySearch.java)  | Searching in a dictionary of a foreign language. | **O(log n)** (worst-case)
-[Interpolation Search](/searching/InterpolationSearch.java)  | Searching in a dictionary when you have an estimate of the words distribution. | **O(log n)** (worst-case)
-[Exponential Search](/searching/ExponentialSearch.java)  | Find range and use binary search. | **O(log n)** (worst-case)
+[Linear Search](/searching/linear_search.py)  | Check every element. | **O(n)** (worst-case)
+[Binary Search](/searching/binary_search.py)  | Searching in a dictionary of a foreign language. | **O(log n)** (worst-case)
+[Interpolation Search](/searching/interpolation_search.py)  | Searching in a dictionary when you have an estimate of the words distribution. | **O(log n)** (worst-case)
+[Exponential Search](/searching/exponential_search.py)  | Find range and use binary search. | **O(log n)** (worst-case)
 
 ## Sorting
 
