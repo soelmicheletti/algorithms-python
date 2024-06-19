@@ -1,3 +1,4 @@
+import data_structures.binary_search_tree
 import data_structures.heap_sort
 import data_structures.max_heap
 import graphs.bfs
@@ -99,6 +100,22 @@ def test_data_structures():
     for l in L_sorted[::-1]:
         assert -heapq.heappop(heap) == l
     print("\t Heap succeeded")
+
+    L = [5, 1, 2, 9, 0]
+    bst = None
+    for l in L: bst = data_structures.binary_search_tree.insert(bst, l)
+    assert data_structures.binary_search_tree.pre_order(bst) == "5 (1 (0 (None) (None)) (2 (None) (None))) (9 (None) (None))"
+    for l in L:
+        assert data_structures.binary_search_tree.search(bst, l)
+    assert not data_structures.binary_search_tree.search(bst, -1)
+    bst = data_structures.binary_search_tree.delete(bst, 5)
+    assert data_structures.binary_search_tree.pre_order(bst) == "9 (1 (0 (None) (None)) (2 (None) (None))) (None)"
+    bst = data_structures.binary_search_tree.delete(bst, 9)
+    assert data_structures.binary_search_tree.pre_order(bst) == "1 (0 (None) (None)) (2 (None) (None))"
+    assert not data_structures.binary_search_tree.search(bst, 5)
+    assert not data_structures.binary_search_tree.search(bst, 9)
+    print("\t Binary search tree succeeded")
+
 
 if __name__ == "__main__":
     print("Testing graphs... ")
