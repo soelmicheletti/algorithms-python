@@ -46,8 +46,9 @@ Algorithm  | Key Idea | Runtime
 
 Data Structure  | Supported Operations 
 ------------- | -------------
-[Binary Search Tree](/data-structures/BinarySearchTree.java)  | Add, find, dele: everything **O(h)** (h is the height of the tree)
+[Binary Search Tree](/data_structures/binary_search_tree.py)  | Add, find, delete: everything **O(h)** (h is the height of the tree)
 [Max heap](/data_structures/max_heap.py)  | Enque, Deque: both **O(log n)**
-[Queue](/data-structures/Queue.java)  | Enque, Deque: both **O(1)** 
-[Stack](/data-structures/Stack.java)  | Push, Pop, Top: everything **O(1)** 
+[Queue](/data_structures/queue.py)  | Enque, Deque: both **O(1)** 
+[Stack](/data_structures/stack.py)  | Push, Pop, Top: everything **O(1)**
+[Set](/data_structures/set.py)  | Add, remove, find: everything **O(1)** on average (hashing)
 [Union Find](/data-structures/UnionFind.java)  | Find, Union: both **O(log n)** using path compression 
