@@ -1,6 +1,7 @@
 import data_structures.binary_search_tree
 import data_structures.heap_sort
 import data_structures.max_heap
+import data_structures.union_find
 import graphs.bfs
 import graphs.bfs_shortest_path
 import graphs.dfs
@@ -115,6 +116,17 @@ def test_data_structures():
     assert not data_structures.binary_search_tree.search(bst, 5)
     assert not data_structures.binary_search_tree.search(bst, 9)
     print("\t Binary search tree succeeded")
+
+    nodes = [data_structures.union_find.make_set(i) for i in range(7)]
+    data_structures.union_find.union(nodes[0], nodes[1])
+    data_structures.union_find.union(nodes[2], nodes[1])
+    data_structures.union_find.union(nodes[1], nodes[6])
+    data_structures.union_find.union(nodes[3], nodes[4])
+    data_structures.union_find.union(nodes[4], nodes[5])
+    data_structures.union_find.union(nodes[0], nodes[5])
+    for node in nodes:
+        data_structures.union_find.find(node).val == 5
+    print("\t Union find succeeded")
 
 
 if __name__ == "__main__":

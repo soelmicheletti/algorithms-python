@@ -51,4 +51,4 @@ Data Structure  | Supported Operations
 [Queue](/data_structures/queue.py)  | Enque, Deque: both **O(1)** 
 [Stack](/data_structures/stack.py)  | Push, Pop, Top: everything **O(1)**
 [Set](/data_structures/set.py)  | Add, remove, find: everything **O(1)** on average (hashing)
-[Union Find](/data-structures/UnionFind.java)  | Find, Union: both **O(log n)** using path compression 
+[Union Find](/data_structures/union_find.py)  | Find, Union: both **O(log n)** using path compression 
