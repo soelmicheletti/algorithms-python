@@ -2,12 +2,20 @@ import data_structures.binary_search_tree
 import data_structures.heap_sort
 import data_structures.max_heap
 import data_structures.union_find
+import graphs.connectivity
+import graphs.bellman_ford
 import graphs.bfs
 import graphs.bfs_shortest_path
+import graphs.dijkstra
 import graphs.dfs
+import graphs.euler
+import graphs.floyd_warshall
+import graphs.kruskal
+import graphs.prim
+import graphs.topo_sort
 import heapq
+import pytest
 import random
-from typing import List
 import searching.binary_search
 import searching.exponential_search
 import searching.interpolation_search
@@ -18,11 +26,25 @@ import sorting.insertion_sort
 import sorting.merge_sort
 import sorting.quick_sort
 import sorting.selection_sort
+from typing import List
 
 def test_graphs():
+    G = [[1], [2], []]
+    assert graphs.topo_sort.topo_sort(G) == [0, 1, 2]
+    G = [[1], [2], [0]]
+    with pytest.raises(ValueError):
+        graphs.topo_sort.topo_sort(G)
+    print("\t Topological sorting tests passed succesfully!")
+
+    G = [[1, 9], [2], [3, 8], [4], [5], [6], [7], [3, 5], [0, 1], [10], [11], [9]]
+    articulation_node, low, bridges = graphs.connectivity.articulation(G)
+    assert low == [1, 1, 1, 4, 4, 4, 4, 4, 1, 10, 10, 10]
+    assert articulation_node == [True, False, False, True, False, False, False, False, False, True, False, False]
+    assert bridges == [[0, 9], [2, 3]]
+    print("\t Articulation nodes and bridges tests passed succesfully!")
+
     # Undirected graphs with thre connected components
     undirected_graph = [[1], [0, 4], [5, 6, 7], [], [1], [2, 6, 7], [2, 5, 7], [2, 5, 6]]
-
     assert graphs.bfs.bfs(undirected_graph, 0) == [True, True, False, False, True, False, False, False]
     assert graphs.bfs.bfs(undirected_graph, 3) == [False, False, False, True, False, False, False, False]
     assert graphs.bfs.bfs(undirected_graph, 6) == [False, False, True, False, False, True, True, True]
@@ -37,6 +59,34 @@ def test_graphs():
     assert graphs.dfs.dfs(undirected_graph, 3) == [False, False, False, True, False, False, False, False]
     assert graphs.dfs.dfs(undirected_graph, 6) == [False, False, True, False, False, True, True, True]
     print("\t DFS tests passed succesfully!")
+
+    G = [[(2, 1)], [], [(4, 1), (3, 5)], [(4, 3)], [(3, 30)]]
+    assert graphs.dijkstra.dijkstra(G, 0) == [0, 100000, 1, 6, 2]
+    print("\t Dijkstra tests passed succesfully!")
+
+    G = [[(2, 1)], [], [(4, 1), (3, -5)], [(4, 30)], [(3, 30)]]
+    assert graphs.bellman_ford.bellman_ford(G, 0) == [0, 100000, 1, -4, 2]
+    G[4].append((0, -10))
+    with pytest.raises(ValueError):
+        graphs.bellman_ford.bellman_ford(G, 0)
+    print("\t Bellman Ford tests passed succesfully!")
+
+    G = [[0, 3, 8, 0, -4], [0, 0, 0, 1, 7], [0, 4, 0, 0, 0], [2, 0, -5, 0, 0], [0, 0, 0, 6, 0]]
+    d = [[0, 1, -3, 2, -4], [3, 0, -4, 1, -1], [7, 4, 0, 5, 3], [2, -1, -5, 0, -2], [8, 5, 1, 6, 0]]
+    assert d == graphs.floyd_warshall.floy_warshall(G)
+    print("\t Floyd Warshall tests passed succesfuly!")
+
+    G = [[1, 2, 3, 4], [0, 2], [0, 1], [0, 4], [0, 3]]
+    assert graphs.euler.eulerian_circuit(G) == [0, 3, 4, 0, 1, 2, 0]
+    print("\t Eulerian circuit tests passed succesfully!")
+
+    G = [[(1, 1), (2, 9), (5, 14)], [(0, 1), (2, 10), (3, 15)], [(5, 2), (0, 9), (1, 10), (3, 11)], [(4, 6), (2, 11), (1, 15)], [(5, 9), (3, 6)], [(4, 9), (0, 14), (2, 2)]]
+    assert graphs.prim.prim(G) == 27
+    print("\t Prim tests passed succesfully!")
+
+    assert graphs.kruskal.kruskal(G) == 27
+    print("\t Kruskal tests passed succesfully!")
+
 
 def test_sorting():
     random.seed(42) # for reproducibility

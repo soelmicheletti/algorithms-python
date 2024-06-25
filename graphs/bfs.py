@@ -1,3 +1,4 @@
+import heapq
 def bfs(adjacency_list, start):
     """
        Breadth first search on a graph
@@ -9,12 +10,13 @@ def bfs(adjacency_list, start):
     n = len(adjacency_list)
     visited = [False] * n
     Q = [start]
+    heapq.heapify(Q)
 
-    while len(Q) > 0:
-        u = Q.pop(0)
+    while Q:
+        u = heapq.heappop(Q)
         if not visited[u]:
             visited[u] = True
             for v in adjacency_list[u]:
                 if v not in Q and not visited[v]:
-                    Q.append(v)
+                    heapq.heappush(Q, v)
     return visited

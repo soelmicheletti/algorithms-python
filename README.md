@@ -7,20 +7,18 @@ Python implementation of basic algorithms and data structures.
 
 ## Graph Theory
 
-In this list we mention the implemented algorithms, together with their goal and runtime. In the [graphs](/graphs) repository, you may find additional implementations using different data structures and no imports. 
-
 Algorithm  | Goal | Runtime
 ------------- | ------------- | -------------
-[Articulation Nodes](/graphs/ArticulationNodes.java)  | Find nodes that ensure graph connectivity. | **O(n+m)**
-[BFS](/graphs/BFSAdjacencyList.java)  | Perform Breadth-First-Search on the graph. | **O(n+m)**
-[Bellman Ford](/graphs/BellmanFordAdjacencyList.java)  | One-to-all shortest path, even with negative weights. | **O(nm)**
-[DFS](/graphs/DFSAdjacencyList.java)  | Perform Depth-First-Search on the graph. | **O(n+m)**
-[Dijkstra](/graphs/DijkstraAdjacencyList.java)  | One-to-all shortest path, weights must be non-negative. | **O(n log n + m)** (with Fibonacci-Heaps, this version is less efficient)
-[Euler Tour](/graphs/EulerTour.java)  | Decide if the graph contains an Euler Tour. | **O(m)** 
-[Floyd Warshall](/graphs/FloydWarshallAdjacencyList.java)  | All-to-all shortest path. | **O(n^3)** 
-[Kruskal](/graphs/KruskalAdjacencyList.java)  | MST by applying the blue rule. | **O(m log m)** 
-[Prim](/graphs/PrimAdjacencyList.java)  | MST by applying the blue/ red rule. | **O(m log n)**
-[Topological Sorting](/graphs/TopologicalSortAdjacencyList.java)  | Determine if the graph has a topological order | **O(n + m)**
+[Articulation Nodes](/graphs/connectivity.py)  | Find nodes and bridges to ensure graph connectivity. | **O(n+m)**
+[BFS](/graphs/bfs.py)  | Perform Breadth-First-Search on the graph. | **O(n+m)**
+[Bellman Ford](/graphs/bellman_ford.py)  | One-to-all shortest path, even with negative weights. | **O(nm)**
+[DFS](/graphs/dfs.py)  | Perform Depth-First-Search on the graph. | **O(n+m)**
+[Dijkstra](/graphs/dijkstra.py)  | One-to-all shortest path, weights must be non-negative. | **O(n log n + m)** (with Fibonacci-Heaps, this version is less efficient)
+[Euler Tour](/graphs/euler.py)  | Decide if the graph contains an Euler Tour. | **O(m)** 
+[Floyd Warshall](/graphs/floyd_warshall.py)  | All-to-all shortest path. | **O(n^3)** 
+[Kruskal](/graphs/kruskal.py)  | MST by applying the blue rule. | **O(m log m)** 
+[Prim](/graphs/prim.py)  | MST by applying the blue/ red rule. | **O(m log n)**
+[Topological Sorting](/graphs/topo_sort.py)  | Determine if the graph has a topological order | **O(n + m)**
 
 ## Searching
 
