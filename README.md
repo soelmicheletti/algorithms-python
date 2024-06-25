@@ -18,6 +18,7 @@ Algorithm  | Goal | Runtime
 [Floyd Warshall](/graphs/floyd_warshall.py)  | All-to-all shortest path. | **O(n^3)** 
 [Kruskal](/graphs/kruskal.py)  | MST by applying the blue rule. | **O(m log m)** 
 [Prim](/graphs/prim.py)  | MST by applying the blue/ red rule. | **O(m log n)**
+[Boruvka](/graphs/boruvka.py)  | Boruvka'algorithm. It is not the most efficient implementation but it shows the idea. | **O(m log n)**
 [Topological Sorting](/graphs/topo_sort.py)  | Determine if the graph has a topological order | **O(n + m)**
 
 ## Searching

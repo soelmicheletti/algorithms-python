@@ -2,6 +2,7 @@ import data_structures.binary_search_tree
 import data_structures.heap_sort
 import data_structures.max_heap
 import data_structures.union_find
+import graphs.boruvka
 import graphs.connectivity
 import graphs.bellman_ford
 import graphs.bfs
@@ -86,6 +87,9 @@ def test_graphs():
 
     assert graphs.kruskal.kruskal(G) == 27
     print("\t Kruskal tests passed succesfully!")
+
+    assert graphs.boruvka.boruvka(G) == 27
+    print("\t Boruvka test passed successfully!")
 
 
 def test_sorting():
