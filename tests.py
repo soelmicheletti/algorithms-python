@@ -1,6 +1,7 @@
 import data_structures.binary_search_tree
 import data_structures.heap_sort
 import data_structures.max_heap
+import data_structures.trie
 import data_structures.union_find
 import graphs.boruvka
 import graphs.connectivity
@@ -21,6 +22,7 @@ import searching.binary_search
 import searching.exponential_search
 import searching.interpolation_search
 import searching.linear_search
+import searching.pattern_matching
 import sorting.bubble_sort
 import sorting.heap_sort
 import sorting.insertion_sort
@@ -140,6 +142,9 @@ def test_searching():
     assert searching.interpolation_search.interpolation_search(L, 4)
     print("\t Interpolation search succeeded")
 
+    assert searching.pattern_matching.kmp("ABABCABAB", "ABABDABACDABABCABAB") == [10]
+    print("\t Knuth-Morris-Pratt test succedeed")
+
 def test_data_structures():
     heap = data_structures.max_heap.MaxHeap()
     L = [17, 3, 19, 25, 36, 100]
@@ -181,6 +186,13 @@ def test_data_structures():
     for node in nodes:
         data_structures.union_find.find(node).val == 5
     print("\t Union find succeeded")
+
+    trie = data_structures.trie.Trie()
+    trie.insert("apple")
+    assert trie.search("apple")
+    assert not trie.search("app")
+    assert trie.startsWith("app")
+    print("\t Trie tests succeeded")
 
 
 if __name__ == "__main__":

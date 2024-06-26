@@ -29,7 +29,7 @@ Algorithm  | Key Idea | Runtime
 [Binary Search](/searching/binary_search.py)  | Searching in a dictionary of a foreign language. | **O(log n)** (worst-case)
 [Interpolation Search](/searching/interpolation_search.py)  | Searching in a dictionary when you have an estimate of the words distribution. | **O(log n)** (worst-case)
 [Exponential Search](/searching/exponential_search.py)  | Find range and use binary search. | **O(log n)** (worst-case)
-
+[Knuth-Morris-Pratt](/searching/pattern_matching.py) | Find pattern of length m in text of length n using | **O(n+m)** with **O(m)** auxiliary space
 ## Sorting
 
 Algorithm  | Key Idea | Runtime
@@ -50,4 +50,5 @@ Data Structure  | Supported Operations
 [Queue](/data_structures/queue.py)  | Enque, Deque: both **O(1)** 
 [Stack](/data_structures/stack.py)  | Push, Pop, Top: everything **O(1)**
 [Set](/data_structures/set.py)  | Add, remove, find: everything **O(1)** on average (hashing)
+[Trie](/data_structures/trie.py)  | Add and search prefixes efficiently
 [Union Find](/data_structures/union_find.py)  | Find, Union: both **O(log n)** using path compression 
