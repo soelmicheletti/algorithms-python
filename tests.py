@@ -1,4 +1,5 @@
 import data_structures.binary_search_tree
+import data_structures.hash_map
 import data_structures.heap_sort
 import data_structures.max_heap
 import data_structures.trie
@@ -141,7 +142,6 @@ def test_searching():
     assert not searching.interpolation_search.interpolation_search(L, 5)
     assert searching.interpolation_search.interpolation_search(L, 4)
     print("\t Interpolation search succeeded")
-
     assert searching.pattern_matching.kmp("ABABCABAB", "ABABDABACDABABCABAB") == [10]
     print("\t Knuth-Morris-Pratt test succedeed")
 
@@ -160,6 +160,14 @@ def test_data_structures():
     for l in L_sorted[::-1]:
         assert -heapq.heappop(heap) == l
     print("\t Heap succeeded")
+
+    M = data_structures.hash_map.HashMap()
+    M.add(1, 3)
+    M.add(2, 3)
+    M.add(3, 3)
+    M.add(1, 5)
+    assert M.find(3) == 3
+    assert M.find(1) == 5
 
     L = [5, 1, 2, 9, 0]
     bst = None
