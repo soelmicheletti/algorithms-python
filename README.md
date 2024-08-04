@@ -49,6 +49,7 @@ Data Structure  | Supported Operations
 [Max heap](/data_structures/max_heap.py)  | Enque, Deque: both **O(log n)**
 [Queue](/data_structures/queue.py)  | Enque, Deque: both **O(1)** 
 [Stack](/data_structures/stack.py)  | Push, Pop, Top: everything **O(1)**
+[Segment Treee](/data_structures/segment_tree.py) | Create **O(n)**, find **O(log n)**, update **O(log n)**
 [Set](/data_structures/set.py)  | Add, remove, find: everything **O(1)** on average (hashing)
-[Trie](/data_structures/trie.py)  | Add and search prefixes efficiently
+[Trie](/data_structures/trie.py)  | Add and search prefixes efficiently | Find **O(k)**
 [Union Find](/data_structures/union_find.py)  | Find, Union: both **O(log n)** using path compression 
