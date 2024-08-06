@@ -1,3 +1,4 @@
+import data_structures.avl_tree
 import data_structures.binary_search_tree
 import data_structures.hash_map
 import data_structures.heap_sort
@@ -201,6 +202,24 @@ def test_data_structures():
     assert not trie.search("app")
     assert trie.startsWith("app")
     print("\t Trie tests succeeded")
+
+    T = data_structures.avl_tree.AVL()
+    T.add(1)
+    T.add(2)
+    T.add(3)
+    assert T.pre_order() == "2{1{}{}}{3{}{}}"
+    T.add(0)
+    assert T.pre_order() == "2{1{0{}{}}{}}{3{}{}}"
+    T.add(4)
+    T.add(5)
+    T.add(7)
+    T.add(8)
+    T.add(6)
+    assert T.pre_order() == "2{1{0{}{}}{}}{5{4{3{}{}}{}}{7{6{}{}}{8{}{}}}}"
+    for i in range(9):
+        assert T.search(i)
+    assert not T.search(3.4)
+    print("\t AVL tree tests succeeded")
 
 
 if __name__ == "__main__":

@@ -45,6 +45,7 @@ Algorithm  | Key Idea | Runtime
 
 Data Structure  | Supported Operations 
 ------------- | -------------
+[AVL tree](/data_structures/avl_tree.py) | Add, find, delete: everything **O(log n)**
 [Binary Search Tree](/data_structures/binary_search_tree.py)  | Add, find, delete: everything **O(h)** (h is the height of the tree)
 [Max heap](/data_structures/max_heap.py)  | Enque, Deque: both **O(log n)**
 [Queue](/data_structures/queue.py)  | Enque, Deque: both **O(1)** 
