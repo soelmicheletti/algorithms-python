@@ -56,9 +56,9 @@ def test_graphs():
     assert graphs.bfs.bfs(undirected_graph, 6) == [False, False, True, False, False, True, True, True]
     print("\t BFS tests passed succesfully!")
 
-    assert graphs.bfs_shortest_path.bfs_shortest_path(undirected_graph, 0) == [0, 1, -1, -1, 2, -1, -1, -1]
-    assert graphs.bfs_shortest_path.bfs_shortest_path(undirected_graph, 3) == [-1, -1, -1, 0, -1, -1, -1, -1]
-    assert graphs.bfs_shortest_path.bfs_shortest_path(undirected_graph, 6) == [-1, -1, 1, -1, -1, 1, 0, 1]
+    assert graphs.bfs_shortest_path.bfs_shortest_path(undirected_graph, 0) == [0, 1, float("inf"), float("inf"), 2, float("inf"), float("inf"), float("inf")]
+    assert graphs.bfs_shortest_path.bfs_shortest_path(undirected_graph, 3) == [float("inf"), float("inf"), float("inf"), 0, float("inf"), float("inf"), float("inf"), float("inf")]
+    assert graphs.bfs_shortest_path.bfs_shortest_path(undirected_graph, 6) == [float("inf"), float("inf"), 1, float("inf"), float("inf"), 1, 0, 1]
     print("\t BFS shortest path tests passed successfully!")
 
     assert graphs.dfs.dfs(undirected_graph, 0) == [True, True, False, False, True, False, False, False]
