@@ -29,6 +29,7 @@ Algorithm  | Key Idea | Runtime
 [Binary Search](/searching/binary_search.py)  | Searching in a dictionary of a foreign language. | **O(log n)** (worst-case)
 [Interpolation Search](/searching/interpolation_search.py)  | Searching in a dictionary when you have an estimate of the words distribution. | **O(log n)** (worst-case)
 [Exponential Search](/searching/exponential_search.py)  | Find range and use binary search. | **O(log n)** (worst-case)
+[Quickselect](/searching/quick_select.py) | Find k-th greatest element in array | **O(n)** (expected), **O(n ** 2)** (worst, but it can be improved by using Blum's algorithm)
 [Knuth-Morris-Pratt](/searching/pattern_matching.py) | Find pattern of length m in text of length n using | **O(n+m)** with **O(m)** auxiliary space
 ## Sorting
 

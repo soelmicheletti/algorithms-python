@@ -25,6 +25,7 @@ import searching.exponential_search
 import searching.interpolation_search
 import searching.linear_search
 import searching.pattern_matching
+import searching.quick_select
 import sorting.bubble_sort
 import sorting.heap_sort
 import sorting.insertion_sort
@@ -143,6 +144,9 @@ def test_searching():
     assert not searching.interpolation_search.interpolation_search(L, 5)
     assert searching.interpolation_search.interpolation_search(L, 4)
     print("\t Interpolation search succeeded")
+    for i in range(len(L)):
+        assert searching.quick_select.quick_select(L, i) == L[i]
+    print("\t Quickselect test succeeded")
     assert searching.pattern_matching.kmp("ABABCABAB", "ABABDABACDABABCABAB") == [10]
     print("\t Knuth-Morris-Pratt test succedeed")
 
